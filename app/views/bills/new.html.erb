@@ -1,0 +1,9 @@
+<%= form_with url: "/users/#{@user.id}/bills", method: :post do |form|%>
+  <%= form.label :amount %>
+  <%= form.text_field :amount %>
+  <%= form.label :due_date %>
+  <%= form.text_field :due_date %>
+  <%= form.label :biller_id, 'Biller Id' %>
+  <%= form.number_field :biller_id %>
+  <%= form.submit :submit %>
+<% end %>
