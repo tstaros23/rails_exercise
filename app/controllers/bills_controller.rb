@@ -1,4 +1,7 @@
 class BillsController < ApplicationController
+  def index
+  end
+
   def new
     @user = User.find(params[:user_id])
   end
@@ -6,6 +9,7 @@ class BillsController < ApplicationController
   def create
     user = User.find(params[:user_id])
     user.bills.create!(bill_params)
+    redirect_to "/users/#{user.id}/bills"
   end
 
   private
